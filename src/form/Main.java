@@ -8,6 +8,7 @@ package form;
 import define.Account;
 import java.awt.CardLayout;
 import java.awt.Color;
+import javax.swing.JPanel;
 import service.QuanLyTaiKhoan;
 
 /**
@@ -56,8 +57,10 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lbthemdoanvien = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        lbsuathongtin = new javax.swing.JPanel();
+        textadads = new javax.swing.JLabel();
+        lbdoanphi = new javax.swing.JPanel();
+        textadads1 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
@@ -130,8 +133,8 @@ public class Main extends javax.swing.JFrame {
                         .addContainerGap(66, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtrole)
                             .addComponent(txtuser))
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -141,11 +144,11 @@ public class Main extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(40, 40, 40)
                 .addComponent(txtuser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtrole)
-                .addGap(33, 33, 33)
+                .addGap(26, 26, 26)
                 .addComponent(jButton1)
                 .addContainerGap(21, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -231,27 +234,61 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel9.setBackground(new java.awt.Color(51, 255, 51));
+        lbsuathongtin.setBackground(new java.awt.Color(51, 255, 51));
+        lbsuathongtin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbsuathongtinMouseClicked(evt);
+            }
+        });
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
-        jLabel9.setText("Sửa thông tin");
+        textadads.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        textadads.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textadads.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        textadads.setText("Sửa thông tin");
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbsuathongtinLayout = new javax.swing.GroupLayout(lbsuathongtin);
+        lbsuathongtin.setLayout(lbsuathongtinLayout);
+        lbsuathongtinLayout.setHorizontalGroup(
+            lbsuathongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbsuathongtinLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textadads, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        lbsuathongtinLayout.setVerticalGroup(
+            lbsuathongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbsuathongtinLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textadads, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        lbdoanphi.setBackground(new java.awt.Color(51, 255, 51));
+        lbdoanphi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbdoanphiMouseClicked(evt);
+            }
+        });
+
+        textadads1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        textadads1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textadads1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/doanphi.png"))); // NOI18N
+        textadads1.setText("Đoàn phí");
+
+        javax.swing.GroupLayout lbdoanphiLayout = new javax.swing.GroupLayout(lbdoanphi);
+        lbdoanphi.setLayout(lbdoanphiLayout);
+        lbdoanphiLayout.setHorizontalGroup(
+            lbdoanphiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbdoanphiLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(textadads1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        lbdoanphiLayout.setVerticalGroup(
+            lbdoanphiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbdoanphiLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(textadads1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -269,7 +306,8 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbxemdanhsach, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbthemdoanvien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lbsuathongtin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbdoanphi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -283,8 +321,10 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lbthemdoanvien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 104, Short.MAX_VALUE))
+                .addComponent(lbsuathongtin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lbdoanphi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 25, Short.MAX_VALUE))
         );
 
         jPanel10.setBackground(new java.awt.Color(51, 153, 255));
@@ -360,6 +400,8 @@ public class Main extends javax.swing.JFrame {
         container.repaint();
         lbxemdanhsach.setBackground(new Color(0,153,255));
         lbthemdoanvien.setBackground(new Color(51,255,51));
+        lbsuathongtin.setBackground(new Color(51,255,51));
+        lbdoanphi.setBackground(new Color(51,255,51));
     }//GEN-LAST:event_lbxemdanhsachMouseClicked
 
     private void lbthemdoanvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbthemdoanvienMouseClicked
@@ -371,7 +413,36 @@ public class Main extends javax.swing.JFrame {
         container.repaint();
         lbthemdoanvien.setBackground(new Color(0,153,255));
         lbxemdanhsach.setBackground(new Color(51,255,51));
+        lbsuathongtin.setBackground(new Color(51,255,51));
+        lbdoanphi.setBackground(new Color(51,255,51));
     }//GEN-LAST:event_lbthemdoanvienMouseClicked
+
+    private void lbsuathongtinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbsuathongtinMouseClicked
+        // TODO add your handling code here:
+        container.removeAll();
+        container.setLayout(new CardLayout());
+        container.add(new EditPanel());
+        container.validate();
+        container.repaint();
+        lbxemdanhsach.setBackground(new Color(51,255,51));
+        lbthemdoanvien.setBackground(new Color(51,255,51));
+        lbdoanphi.setBackground(new Color(51,255,51));
+        lbsuathongtin.setBackground(new Color(0,153,255));
+
+    }//GEN-LAST:event_lbsuathongtinMouseClicked
+
+    private void lbdoanphiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbdoanphiMouseClicked
+        // TODO add your handling code here:
+        container.removeAll();
+        container.setLayout(new CardLayout());
+        container.add(new xemdoanphi());
+        container.validate();
+        container.repaint();
+        lbsuathongtin.setBackground(new Color(51,255,51));
+        lbxemdanhsach.setBackground(new Color(51,255,51));
+        lbthemdoanvien.setBackground(new Color(51,255,51));
+        lbdoanphi.setBackground(new Color(0,153,255));
+    }//GEN-LAST:event_lbdoanphiMouseClicked
 
     /**
      * @param args the command line arguments
@@ -416,16 +487,18 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel lbdoanphi;
+    private javax.swing.JPanel lbsuathongtin;
     private javax.swing.JPanel lbthemdoanvien;
     private javax.swing.JPanel lbxemdanhsach;
+    private javax.swing.JLabel textadads;
+    private javax.swing.JLabel textadads1;
     private javax.swing.JLabel txtrole;
     private javax.swing.JLabel txtuser;
     // End of variables declaration//GEN-END:variables

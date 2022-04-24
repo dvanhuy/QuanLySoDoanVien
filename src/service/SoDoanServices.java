@@ -88,7 +88,7 @@ public class SoDoanServices {
         List<User> listUser = new ArrayList<>();
        Connection con = ConnectSQL.getConnectSQL();
        String sql="Select * from DoanVien where (maSinhVien like '%" + tim + "%') "
-               + "or (tenDoanVien like '%" + tim + "%')";
+               + "or (tenDoanVien like N'%" + tim + "%')";
 
        try {
            PreparedStatement preparedStatement = con.prepareStatement(sql);
@@ -205,6 +205,7 @@ public class SoDoanServices {
             System.out.println("Lỗi tại Add");
         }
     }
+    
     public void deleteUser(String idDoanVien){
         Connection con = ConnectSQL.getConnectSQL();
         String sql = "Delete from DoanVien where idDoanVien = ?";
@@ -236,5 +237,58 @@ public class SoDoanServices {
             e.printStackTrace();;
         }
         return idNext;
+    }
+    
+    public User SearchUser_findID(String id)
+    {
+        User user = new User();
+        Connection con = ConnectSQL.getConnectSQL();
+        String sql="Select * from DoanVien where maSinhVien=?";
+
+       try {
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            preparedStatement.setString(1, id);
+            ResultSet rs = preparedStatement.executeQuery();
+            rs.next();
+
+            user.setIdDoanVien(rs.getString("idDoanVien"));
+            user.setTenDoanVien(rs.getString("tenDoanVien"));
+            user.setMaSinhVien(rs.getString("maSinhVien"));
+            user.setDoB(rs.getString("dob"));
+            user.setQueQuan(rs.getString("queQuan"));
+            user.setTenLop(rs.getString("tenLop"));
+            user.setTenKhoa(rs.getString("tenKhoa"));
+            user.setTienCanNop(rs.getDouble("tienCanNop"));
+            user.setTienDaNop(rs.getDouble("tienDaNop"));
+            user.setTinhTrangSoDoan(rs.getString("tinhTrangSoDoan"));
+            return user;
+                
+       } catch (SQLException e) {
+           System.out.println("Lỗi tại lấy doan vien theo khoa");
+           return null;
+       }
+       
+    }
+    
+    
+    public void UpdateUser(User user)
+    {
+        Connection con = ConnectSQL.getConnectSQL();
+        String sql="UPDATE DoanVien set tenDoanVien=?,queQuan=?,tienCanNop=?,tienDaNop=?,tinhTrangSoDoan=? "
+                + " where idDoanVien=?";
+
+       try {
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            preparedStatement.setString(1, user.getTenDoanVien());
+            preparedStatement.setString(2, user.getQueQuan());
+            preparedStatement.setDouble(3, user.getTienCanNop());
+            preparedStatement.setDouble(4, user.getTienDaNop());
+            preparedStatement.setString(5, user.getTinhTrangSoDoan());
+            preparedStatement.setString(6, user.getIdDoanVien());
+            
+            preparedStatement.execute();
+       } catch (SQLException e) {
+           System.out.println("Lỗi tại update");
+       }
     }
 }
