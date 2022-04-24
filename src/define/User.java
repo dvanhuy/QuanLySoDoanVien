@@ -19,42 +19,10 @@ public class User {
     private double tienCanNop;
     private double tienDaNop;
     private String tinhTrangSoDoan;
-    private String tenTK;
-    private String pass;
 
     public User() {
     }
-
-    public User(String idDoanVien, String tenDoanVien, String maSinhVien, String doB, String queQuan, String tenLop, String tenKhoa, double tienCanNop, double tienDaNop, String tinhTrangSoDoan, String tenTK, String pass) {
-        this.idDoanVien = idDoanVien;
-        this.tenDoanVien = tenDoanVien;
-        this.maSinhVien = maSinhVien;
-        this.doB = doB;
-        this.queQuan = queQuan;
-        this.tenLop = tenLop;
-        this.tenKhoa = tenKhoa;
-        this.tienCanNop = tienCanNop;
-        this.tienDaNop = tienDaNop;
-        this.tinhTrangSoDoan = tinhTrangSoDoan;
-        this.tenTK = tenTK;
-        this.pass = pass;
-    }
-
-    public User(String idDoanVien, String tenDoanVien, String maSinhVien, String doB, String queQuan, String tenLop, String tenKhoa, double tienCanNop, double tienDaNop, String tinhTrangSoDoan) {
-        this.idDoanVien = idDoanVien;
-        this.tenDoanVien = tenDoanVien;
-        this.maSinhVien = maSinhVien;
-        this.doB = doB;
-        this.queQuan = queQuan;
-        this.tenLop = tenLop;
-        this.tenKhoa = tenKhoa;
-        this.tienCanNop = tienCanNop;
-        this.tienDaNop = tienDaNop;
-        this.tinhTrangSoDoan = tinhTrangSoDoan;
-    }
     
-    
-
     public String getIdDoanVien() {
         return idDoanVien;
     }
@@ -135,21 +103,5 @@ public class User {
         this.tinhTrangSoDoan = tinhTrangSoDoan;
     }
 
-    public String getTenTK() {
-        return tenTK;
-    }
-
-    public void setTenTK(String tenTK) {
-        this.tenTK = tenTK;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-    
     
 }

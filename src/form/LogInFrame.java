@@ -4,19 +4,23 @@
  */
 package form;
 
+import define.Account;
 import java.awt.Color;
+import javax.swing.JOptionPane;
+import service.QuanLyTaiKhoan;
 
 public class LogInFrame extends javax.swing.JFrame {
     
-//    QuanLyNguoiDung quanLyNguoiDung;
-//    User user;        
+    QuanLyTaiKhoan quanLyTaiKhoan;
+    Account account;       
     
     public LogInFrame() {
         initComponents();
         setSize(380, 330);
         setLocationRelativeTo(null);
-//        quanLyNguoiDung= new QuanLyNguoiDung();
-//        user= new User();
+
+        quanLyTaiKhoan = new QuanLyTaiKhoan();
+        account= new Account();
     }
 
     @SuppressWarnings("unchecked")
@@ -180,16 +184,16 @@ public class LogInFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPassFocusLost
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
-//        String username=txtUsername.getText();
-//        String password=String.valueOf(txtPass.getPassword());
-//        user=quanLyNguoiDung.checkUser(username, password);
-//        if (user == null) 
-//            JOptionPane.showMessageDialog(this, "Tài khoản hoặc mật khẩu sai", "Sai", JOptionPane.ERROR_MESSAGE);
-//        else 
-//        {
-            new Main().setVisible(true);
+        String username=txtUsername.getText();
+        String password=String.valueOf(txtPass.getPassword());
+        account=quanLyTaiKhoan.checkUser(username, password);
+        if (account == null) 
+            JOptionPane.showMessageDialog(this, "Tài khoản hoặc mật khẩu sai", "Sai", JOptionPane.ERROR_MESSAGE);
+        else 
+        {
+            new Main(account).setVisible(true);
             this.dispose();
-//        }
+        }
     }//GEN-LAST:event_btLoginActionPerformed
 
     private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassActionPerformed

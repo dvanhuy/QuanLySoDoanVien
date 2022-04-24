@@ -4,7 +4,7 @@
  */
 package service;
 
-import GetConnectSQL.ConnectSQL;
+import getconnect.ConnectSQL;
 import define.User;
 import java.util.List;
 import java.sql.*;
@@ -16,12 +16,13 @@ import java.util.ArrayList;
  */
 public class SoDoanServices {
     public List<User> getAllUser(){
-        List<User> users = new ArrayList<User>();
+        List<User> users = new ArrayList<>();
         Connection con = ConnectSQL.getConnectSQL();
-        String sql = "Select * from DoanVien";
+        String sql = "Select * from DoanVien"   ;
         try {
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
+            
             while(rs.next())
             {
                 User newUser = new User();
@@ -34,7 +35,7 @@ public class SoDoanServices {
                 newUser.setTenLop(rs.getString("tenLop"));
                 newUser.setTenKhoa(rs.getString("tenKhoa"));
                 newUser.setTienCanNop(rs.getDouble("tienCanNop"));
-                newUser.setTienDaNop(rs.getDouble("tienĐaNop"));
+                newUser.setTienDaNop(rs.getDouble("tienDaNop"));
                 newUser.setTinhTrangSoDoan(rs.getString("tinhTrangSoDoan"));
                 
                 users.add(newUser);
@@ -45,10 +46,10 @@ public class SoDoanServices {
     return users;
     }
     public List<User> getAllUser_tinhTrang(String tinhTrang){
-        List<User> users = new ArrayList<User>();
+        List<User> users = new ArrayList<>();
         Connection con = ConnectSQL.getConnectSQL();
         String sql = "";
-        if(tinhTrang.equals("Đã nộp"))
+        if(tinhTrang.equals("DANOP"))
         {
             sql = "Select * from DoanVien where tinhTrangSoDoan = N'Đã nộp'";
         }
@@ -71,7 +72,7 @@ public class SoDoanServices {
                 newUser.setTenLop(rs.getString("tenLop"));
                 newUser.setTenKhoa(rs.getString("tenKhoa"));
                 newUser.setTienCanNop(rs.getDouble("tienCanNop"));
-                newUser.setTienDaNop(rs.getDouble("tienĐaNop"));
+                newUser.setTienDaNop(rs.getDouble("tienDaNop"));
                 newUser.setTinhTrangSoDoan(rs.getString("tinhTrangSoDoan"));
                 
                 users.add(newUser);
@@ -81,6 +82,106 @@ public class SoDoanServices {
         }
     return users;
     }
+    
+    public List<User> searchUser(String tim)
+    {
+        List<User> listUser = new ArrayList<>();
+       Connection con = ConnectSQL.getConnectSQL();
+       String sql="Select * from DoanVien where (maSinhVien like '%" + tim + "%') "
+               + "or (tenDoanVien like '%" + tim + "%')";
+
+       try {
+           PreparedStatement preparedStatement = con.prepareStatement(sql);
+           ResultSet rs = preparedStatement.executeQuery();
+           while(rs.next())
+           {
+                User newUser = new User();
+                
+                newUser.setIdDoanVien(rs.getString("idDoanVien"));
+                newUser.setTenDoanVien(rs.getString("tenDoanVien"));
+                newUser.setMaSinhVien(rs.getString("maSinhVien"));
+                newUser.setDoB(rs.getString("dob"));
+                newUser.setQueQuan(rs.getString("queQuan"));
+                newUser.setTenLop(rs.getString("tenLop"));
+                newUser.setTenKhoa(rs.getString("tenKhoa"));
+                newUser.setTienCanNop(rs.getDouble("tienCanNop"));
+                newUser.setTienDaNop(rs.getDouble("tienDaNop"));
+                newUser.setTinhTrangSoDoan(rs.getString("tinhTrangSoDoan"));
+                
+                listUser.add(newUser);
+           }
+       } catch (SQLException e) {
+           System.out.println("Lỗi tại lấy xe theo tim kiem");
+       }
+       return listUser;
+    }
+    
+    public List<User> getAllUser_Lop(String tim)
+    {
+        List<User> listUser = new ArrayList<>();
+       Connection con = ConnectSQL.getConnectSQL();
+       String sql="Select * from DoanVien where tenLop=?";
+
+       try {
+           PreparedStatement preparedStatement = con.prepareStatement(sql);
+           preparedStatement.setString(1, tim);
+           ResultSet rs = preparedStatement.executeQuery();
+           while(rs.next())
+           {
+                User newUser = new User();
+                
+                newUser.setIdDoanVien(rs.getString("idDoanVien"));
+                newUser.setTenDoanVien(rs.getString("tenDoanVien"));
+                newUser.setMaSinhVien(rs.getString("maSinhVien"));
+                newUser.setDoB(rs.getString("dob"));
+                newUser.setQueQuan(rs.getString("queQuan"));
+                newUser.setTenLop(rs.getString("tenLop"));
+                newUser.setTenKhoa(rs.getString("tenKhoa"));
+                newUser.setTienCanNop(rs.getDouble("tienCanNop"));
+                newUser.setTienDaNop(rs.getDouble("tienDaNop"));
+                newUser.setTinhTrangSoDoan(rs.getString("tinhTrangSoDoan"));
+                
+                listUser.add(newUser);
+           }
+       } catch (SQLException e) {
+           System.out.println("Lỗi tại lấy doan vien theo lop");
+       }
+       return listUser;
+    }
+    
+    public List<User> getAllUser_Khoa(String tim)
+    {
+        List<User> listUser = new ArrayList<>();
+       Connection con = ConnectSQL.getConnectSQL();
+       String sql="Select * from DoanVien where tenKhoa=?";
+
+       try {
+           PreparedStatement preparedStatement = con.prepareStatement(sql);
+           preparedStatement.setString(1, tim);
+           ResultSet rs = preparedStatement.executeQuery();
+           while(rs.next())
+           {
+                User newUser = new User();
+                
+                newUser.setIdDoanVien(rs.getString("idDoanVien"));
+                newUser.setTenDoanVien(rs.getString("tenDoanVien"));
+                newUser.setMaSinhVien(rs.getString("maSinhVien"));
+                newUser.setDoB(rs.getString("dob"));
+                newUser.setQueQuan(rs.getString("queQuan"));
+                newUser.setTenLop(rs.getString("tenLop"));
+                newUser.setTenKhoa(rs.getString("tenKhoa"));
+                newUser.setTienCanNop(rs.getDouble("tienCanNop"));
+                newUser.setTienDaNop(rs.getDouble("tienDaNop"));
+                newUser.setTinhTrangSoDoan(rs.getString("tinhTrangSoDoan"));
+                
+                listUser.add(newUser);
+           }
+       } catch (SQLException e) {
+           System.out.println("Lỗi tại lấy doan vien theo khoa");
+       }
+       return listUser;
+    }
+    
     public void addUser(User user){
         Connection con = ConnectSQL.getConnectSQL();
         String sql = "Insert into DoanVien(idDoanVien,tenDoanVien,maSinhVien,doB,queQuan,tenLop,tenKhoa,tienCanNop,tienDaNop,tinhTrangSoDoan)"
@@ -115,5 +216,25 @@ public class SoDoanServices {
         } catch (SQLException e) {
             System.out.println("Lỗi tại DeleteUser");
         }
+    }
+    
+    public static String getIdNext(){
+        Connection con = ConnectSQL.getConnectSQL();
+        String sql = "select dbo.FN_getidDoanVien()";
+        String idNext = null;
+        try{
+            PreparedStatement preparedStatement = con.prepareCall(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+            if(rs.next())
+            {
+                idNext = rs.getString("");
+            }
+            return idNext;
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();;
+        }
+        return idNext;
     }
 }

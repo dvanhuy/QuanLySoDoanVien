@@ -41,3 +41,22 @@ values ('DV001',N'Nguyễn Văn A','2050531200131','21-12-2000',N'Đà Nẵng', 
 	   ('DV005',N'Nguyễn Văn E','1950531200101','13-12-2000',N'Đà Nẵng', '19T1', 'KH02', 24000, 0, N'Chưa nộp'),
 	   ('DV006',N'Nguyễn Trí A','2050531200101','23-10-2002',N'Đà Nẵng', '20T1', 'KH01', 24000, 12000, N'Chưa nộp'),
 	   ('DV007',N'Đinh Văn A','2050531200101','15-05-2002',N'Đà Nẵng', '20T1', 'KH01', 24000, 24000, N'Đã nộp')
+
+go
+create or alter function FN_getidDoanVien
+()
+returns char(5)
+as
+begin
+	declare @id char(5)
+	select top 1  @id=idDoanVien
+	from DoanVien
+	order by idDoanVien desc
+	declare @lastnumber int
+	set @lastnumber=right(@id,3)+1
+	declare @nextchar char(5)
+	set @nextchar=CONCAT('DV', format (@lastnumber, 'D3'))
+	return @nextchar
+end
+go
+select dbo.FN_getidDoanVien()

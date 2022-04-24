@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package GetConnectSQL;
+package getconnect;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,9 +14,9 @@ import java.sql.SQLException;
  */
 public class ConnectSQL {
     public static Connection getConnectSQL(){
-        String url = "jdbc:sqlserver://DESKTOP-T6COLHJ\\MSSQLSERVER01:1433;databaseName=BanHang";
+        String url = "jdbc:sqlserver://LAPTOP-ATNHOQI8\\MSSQLSERVER01:1433;databaseName=QuanLySoDoan";//DESKTOP-T6COLHJ
         String user = "sa";
-        String password = "popdaica123";
+        String password = "12345";
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             return DriverManager.getConnection(url,user,password);
