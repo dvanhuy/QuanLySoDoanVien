@@ -107,7 +107,7 @@ public class xemdoanphi extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tbDoanPhi);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Tìm trạng sổ đoàn", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Tình trạng sổ đoàn", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
 
         ckdanop.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ckdanop.setSelected(true);

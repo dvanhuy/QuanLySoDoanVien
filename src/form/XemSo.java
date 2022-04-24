@@ -6,6 +6,7 @@
 package form;
 
 import define.User;
+import java.awt.Color;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import service.SoDoanServices;
@@ -172,7 +173,7 @@ public class XemSo extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Tìm trạng", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Tình trạng", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
 
         ckdanop.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ckdanop.setSelected(true);

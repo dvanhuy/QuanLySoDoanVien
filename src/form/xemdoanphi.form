@@ -76,7 +76,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder justification="1" position="2" title="T&#xec;m tr&#x1ea1;ng s&#x1ed5; &#x111;o&#xe0;n">
+            <TitledBorder justification="1" position="2" title="T&#xec;nh tr&#x1ea1;ng s&#x1ed5; &#x111;o&#xe0;n">
               <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
                 <EtchetBorder/>
               </Border>
